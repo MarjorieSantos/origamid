@@ -9,6 +9,9 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/portfolio.css">
 		<link rel="stylesheet" href="css/responsivo.css">
+		<script>
+			document.documentElement.classList.add("js");
+		</script>
 	</head>
 	<body>
 
@@ -30,20 +33,33 @@
 
 		<section class="introducao-interna interna_portfolio">
 			<div class="container">
-				<h1>Portfólio</h1>
-				<p>conheça os projetos que amamos mostrar</p>
+				<h1 data-anime="400" class="fadeInDown">Portfólio</h1>
+				<p data-anime="800" class="fadeInDown">conheça os projetos que amamos mostrar</p>
 			</div>
 		</section>
 
-		<section class="container">
+		<section class="container fadeInDown" data-slide="quote" data-anime="1200">
 			<blockquote class="quote_clientes">
 				<p>“No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formulação da gestão inovadora da qual fazemos parte.”</p>
+				<cite>Barbara Moss</cite>
+			</blockquote>
+			<blockquote class="quote_clientes">
+				<p>“Nunca entendi quem consegue trabalhar por anos num lugar, num assunto, sem vontade, sem interesse. Quem passa pano no chão e manteiga no pão sem querer, sem observar os cantos. ”</p>
+				<cite>Barbara Moss</cite>
+			</blockquote>
+			<blockquote class="quote_clientes">
+				<p>“Nunca entendi quem não vê a morte se instaurar nas coisas que a gente não olha, não vivencia, não coloca intenção. Quem sai nas ruas procurando vida, entra nos bares, busca consolo em outros colos,”</p>
 				<cite>Barbara Moss</cite>
 			</blockquote>
 		</section>
 
 		<section class="portfolio">
-			<div class="container">
+			<div class="container" data-slide="portfolio">
+				<ul class="portfolio_lista">
+					<li class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicicleta Retrô"></li>
+					<li class="grid-8"><img src="img/portfolio/passeio.jpg" alt="Bicicleta Passeio"></li>
+					<li class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicicleta Esporte"></li>
+				</ul>
 				<ul class="portfolio_lista">
 					<li class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicicleta Retrô"></li>
 					<li class="grid-8"><img src="img/portfolio/passeio.jpg" alt="Bicicleta Passeio"></li>
@@ -95,6 +111,11 @@
 				</div>
 			</div>
 		</footer>
+		
+		<script src="./js/simple-anime.js"></script>
+		<script src="./js/simple-slide.js"></script>
+		<script src="./js/script.js"></script>
+
 
 	</body>
 </html>
