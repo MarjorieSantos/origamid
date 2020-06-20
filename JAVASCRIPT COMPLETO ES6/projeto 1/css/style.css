@@ -221,7 +221,7 @@ body{
   display: none;
 }
 
-.js .js-tabcontent section.ativo{
+.js .js-tabcontent section.ativo {
   display: block !important;
   animation: show .5s forwards;
 }
@@ -236,6 +236,7 @@ body{
     transform: translate3d(0,0,0);
   }
 }
+
 
 .js .js-accordion dd{
   display: none;
@@ -255,7 +256,7 @@ body{
   display: block;
   animation: slideDown .5s forwards;
 }
-  
+
 @keyframes slideDown{
   from{
     max-height: 0;
