@@ -42,5 +42,3 @@ export default function ToolTip() {
     item.addEventListener('mouseover', onMouseOver)
   })
 }
-
-
