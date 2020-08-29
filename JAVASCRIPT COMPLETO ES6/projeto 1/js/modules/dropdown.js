@@ -11,20 +11,31 @@ export default function dropdownMenu() {
   function handleClick(event) {
     event.preventDefault();
     this.classList.toggle('active')
-    outSideClick((this) => {
+    outSideClick(this, ['touchstart', 'click'], () => {
       this.classList.remove('active')
     })
   }
 
 
 
-  function outSideClick(element, callback) {
+  function outSideClick(element, event, callback) {
     const html = document.documentElement;
-    html.addEventListener('click', handleOutSide)
+    const outside = "data-outside";
+    if (element.hasAttribute(outside)) {
+      event.forEach(userevent => {
+        html.addEventListener('click', handleOutSide)
+      })
+
+      element.setAttribute(outside, '')
+    }
+
     function handleOutSide(event) {
       if (!element.contains(event.target)) {
-        html.removeEventListener('click', handleOutSide)
+        event.forEach(userevent => {
+          html.removeEventListener('click', handleOutSide)
+        })
 
+        element.removeAttribute(outside)
         callback()
       }
 
