@@ -1,3 +1,5 @@
+import outSideClick from './outsideclick.js'
+
 export default function menuMobile() {
 
 }
@@ -5,26 +7,14 @@ export default function menuMobile() {
 const menuButton = document.querySelector('[data-menu="button"]')
 const menuList = document.querySelector('[data-menu="list"]')
 
-function outSideClick(element, event, callback) {
-    const html = document.documentElement;
-    const outside = "data-outside";
-    if (element.hasAttribute(outside)) {
-        event.forEach(userevent => {
-            html.addEventListener('click', handleOutSide)
-        })
+function OpenMenu(event) {
+    menuList.classList.add('ativo')
+    menuButton.classList.add('ativo')
+    outSideClick(menuList, ['click', 'touchstart'], () => {
+        menuList.classList.remove('ativo')
+        menuButton.classList.remove('ativo')
+    })
 
-        element.setAttribute(outside, '')
-    }
-
-    function handleOutSide(event) {
-        if (!element.contains(event.target)) {
-            event.forEach(userevent => {
-                html.removeEventListener('click', handleOutSide)
-            })
-
-            element.removeAttribute(outside)
-            callback()
-        }
-
-    }
 }
+
+menuButton.addEventListener("click", OpenMenu)
