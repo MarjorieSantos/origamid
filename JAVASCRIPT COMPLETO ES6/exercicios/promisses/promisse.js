@@ -55,3 +55,6 @@ const carregouTudo = Promise.all([login, dados])
 carregouTudo.then((resolve) => {
   console.log(resolve)
 })
+
+
+//.race()  - retorna a primeira promisse que for resolvida 
